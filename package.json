@@ -4,7 +4,7 @@
   "description": "DeltaMath Hacking GUI, for user convenience.",
   "main": "dist/bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "npx webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/DxltaMath/dGUI#readme",
   "devDependencies": {
+    "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "glob": "^8.0.3",
     "postcss-loader": "^7.0.1",
     "raw-loader": "^4.0.2",
     "sass-loader": "^13.0.2",
