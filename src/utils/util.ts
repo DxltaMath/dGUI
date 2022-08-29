@@ -1,4 +1,6 @@
 /** The hack variable. */
+
+
 // @ts-ignore
 export const delta : any = window.delta;
 

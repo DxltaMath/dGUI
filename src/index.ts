@@ -28,7 +28,7 @@ toggler.onclick = () => {
 
 	if (visible) {
 		toggler.innerText = "▼";
-		menu.style.top = "-100vh";
+		menu.style.top = "-200vh";
 	} else {
 		toggler.innerText = "▲";
 		menu.style.top = "10%";
@@ -176,8 +176,8 @@ export class Toggler extends Hack {
 }
 
 export const category = {
-	player: addArea("Math Hacks"),
-	inventory: addArea("Timed Hacks"),
+	math: addArea("Math Hacks"),
+	timed: addArea("Timed Hacks"),
 	utility: addArea("Utility Hacks"),
 	beta: addArea("Beta Testing"),
 	patched : addArea("Patched Hacks")
