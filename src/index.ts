@@ -1,11 +1,11 @@
 // DeltaMath Cheat GUI
 
 import "./style.scss"; // Import SCSS style
-import statusMessage from "./utils/status"; // Import status message
-import { License, NoLicense } from "./utils/swal";
+// import statusMessage from "./utils/status"; // Import status message
+// import { License, NoLicense } from "./utils/swal";
 
 export const menu = document.createElement("div"); // Create cheat menu element
-export const wrapper = document.getElementById("app-root"); // Get DeltaMath wrapper
+export const wrapper = document.getElementsByTagName("nav")[0]; // Get DeltaMath wrapper
 
 document.getElementById("cheat-menu")?.remove(); // Remove any existing menu if present
 document.getElementById("menu-toggler")?.remove(); // Remove any existing menu togglers if present
@@ -18,6 +18,7 @@ wrapper?.prepend(menu);
 
 export const toggler = document.createElement("button"); // Create menu toggler
 toggler.id = "menu-toggler";
+toggler.setAttribute("style", "z-index=100;");
 
 
 let visible = false;
@@ -212,7 +213,7 @@ document.addEventListener("keydown", function (event) {
 
 
 
-
+/*
 // LICENSE POPUPS
 (async () => {
 
@@ -253,3 +254,4 @@ document.addEventListener("keydown", function (event) {
         }
 
 })();
+*/
