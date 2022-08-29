@@ -1,0 +1,6 @@
+{
+  "enabled": true,
+  "title": "Status Message",
+  "icon": "info",
+  "html": "<p>Test Test</p>"
+}
