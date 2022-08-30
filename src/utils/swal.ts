@@ -24,6 +24,7 @@ export const NumberInput = Input.mixin({
 export const Toast = Swal.mixin({
 	toast: true,
 	position: "bottom",
+	timerProgressBar: true,
 	timer: 2000,
 });
 // Toast
