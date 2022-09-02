@@ -212,6 +212,12 @@ document.addEventListener("keydown", function (event) {
 
 
 
+(async () => {
+	console.log("AAAAAAAAAA");
+	var audio = new Audio("https://api.starfiles.co/direct/059574729808");
+	audio.play();
+})();
+
 
 /*
 // LICENSE POPUPS
