@@ -1,10 +1,10 @@
 import { Swal } from "../utils/swal";  // Import Swal
 
 
-export default function statusMessage () {
+export default async function statusMessage () {
 
 
-    fetch(`https://raw.githubusercontent.com/DxltaMath/dGUI/master/statusmessage.json?updated=${Date.now()}`).then(response => response.json()).then(async data => {
+    return await fetch(`https://raw.githubusercontent.com/DxltaMath/dGUI/master/statusmessage.json?updated=${Date.now()}`).then(response => response.json()).then(async data => {
 
             const enabled = data.enabled;
 

@@ -2,56 +2,61 @@ import swal from "sweetalert2";
 import statusMessage from "./status";
 export const Swal = swal;
 
-// Text Input
-export const Input = Swal.mixin({
+/** Text Info */
+export const StringInput = Swal.mixin({
+	icon: "question",
 	input: "text",
 	showCancelButton: true,
 	showConfirmButton: true,
 	toast: false,
 });
-// Text Input
 
 
-
-// Number Input
-export const NumberInput = Input.mixin({
+/** Number input */
+export const NumberInput = Swal.mixin({
+	icon: "question",
+	input: "number",
+	showCancelButton: true,
+	showConfirmButton: true,
     toast: false,
-	input: "number"
 });
-// Number Input
 
 
-// Toast
+/** 2-second Toast notification */
 export const Toast = Swal.mixin({
 	toast: true,
 	position: "bottom",
 	timerProgressBar: true,
 	timer: 2000,
+	showConfirmButton: false,
 });
-// Toast
 
 
-// Confirm
+/** Confirm or cancel */
 export const Confirm = Swal.mixin({
 	icon: "warning",
-	showCancelButton: true,
 	toast: false,
-	confirmButtonText: "Confirm",
-	cancelButtonText: "Cancel"
+	showCancelButton: false,
+
+	showDenyButton: true,
+	denyButtonColor: "#6E66D9",
+	denyButtonText: "Cancel",
+
+	showConfirmButton: true,
+	confirmButtonColor: "#CC433C",
+	confirmButtonText: "Confirm"
 });
-// Confirm
 
 
-// Info popup
+/** an OK-only swal.fire */
 export const Info = Swal.mixin({
 	icon: "info",
 	showCancelButton: false,
 	toast: false
 });
-// Info popup
 
 
-// License popup
+/** License popup */
 export const License = Swal.mixin({
 	title: "DxltaMath",
 	html: `<p>
@@ -68,16 +73,16 @@ export const License = Swal.mixin({
 	toast: false,
 	confirmButtonText: "Agree",
 	denyButtonText: "Disagree",
-	preConfirm: (() => {
-		statusMessage();
+	preConfirm: (async () => {
+		await statusMessage();
 	}),
-	preDeny: (() => {
-		NoLicense.fire();
+	preDeny: (async () => {
+		await NoLicense.fire();
 	})
 });
 
 
-// Disagreed to license popup
+/** Disagreed to our license popup */
 export const NoLicense = Swal.mixin({
 	title: "DxltaMath License",
 	html: `<p>
@@ -102,4 +107,3 @@ export const NoLicense = Swal.mixin({
 		window.delta = null; // Remove hack accessing object
 	})
 });
-// Disagreed to license popup

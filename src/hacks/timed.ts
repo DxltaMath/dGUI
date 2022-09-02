@@ -1,6 +1,8 @@
-import { category, Toggler } from "../index";
+import Toggler from "../core/Toggler";
+import { category } from "../utils/category";
 import { Toast } from "../utils/swal";
 import { delta } from "../utils/util";
+
 
 new Toggler(category.timed, "No Randomize", "Does not randomize math problems in timed challenges").setEnabled(async () => {
     delta.doNotRandomize = true;
