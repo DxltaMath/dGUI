@@ -1,4 +1,5 @@
 import swal from "sweetalert2";
+import statusMessage from "./status";
 export const Swal = swal;
 
 // Text Input
@@ -52,20 +53,53 @@ export const Info = Swal.mixin({
 
 // License popup
 export const License = Swal.mixin({
+	title: "DxltaMath",
+	html: `<p>
+	<a href="https://github.com/DxltaMath/license/blob/master/dGUI-License.txt">This is free and open-source software</a>.
+	If you paid for this or accessed this behind a paywall/AdFly link, demand a refund. If you sell this software, or otherwise make a commercial advantage from it, you are violating
+	<a href = "https://github.com/DxltaMath/license/blob/master/dGUI-License.txt">our license</a>.
+	</p>`,
 	icon: "info",
-	showCancelButton: true,
+	showConfirmButton: true,
+	showDenyButton: true,
+	showCancelButton: false,
+	allowEscapeKey: false,
+	allowOutsideClick: false,
 	toast: false,
 	confirmButtonText: "Agree",
-	cancelButtonText: "Disagree"
+	denyButtonText: "Disagree",
+	preConfirm: (() => {
+		statusMessage();
+	}),
+	preDeny: (() => {
+		NoLicense.fire();
+	})
 });
 
 
 // Disagreed to license popup
 export const NoLicense = Swal.mixin({
+	title: "DxltaMath License",
+	html: `<p>
+	<strong>You need to agree to our license to use our hacks. If you changed your mind and now agree to our license, reload DeltaMath.</strong>
+	</p>`,
 	icon: "error",
-	showCancelButton: true,
+	showConfirmButton: true,
+	showCancelButton: false,
+	showDenyButton: true,
+	allowEscapeKey: false,
+	allowOutsideClick: false,
 	toast: false,
 	confirmButtonText: "Reload",
-	cancelButtonText: "Play without hacks"
+	cancelButtonText: "Do DeltaMath without hacks",
+	preConfirm: (() => {
+		window.location.reload();
+	}),
+	preDeny: (() => {
+		document.getElementById("cheat-menu")?.remove(); // Remove any existing menu if present
+		document.getElementById("menu-toggler")?.remove(); // Remove any existing menu togglers if present
+		// @ts-expect-error
+		window.delta = null; // Remove hack accessing object
+	})
 });
 // Disagreed to license popup
