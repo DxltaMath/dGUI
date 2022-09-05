@@ -1,8 +1,9 @@
-/** The hack variable. */
+import hack from "../../declarations/delta";
 
 
-// @ts-ignore
-export const delta : any = window.delta;
+
+/* @ts-ignore */ /** The hack variable. */
+export const delta : typeof hack = window.delta;
 
 
 /** Over 9000000000 */
