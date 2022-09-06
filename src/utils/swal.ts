@@ -2,6 +2,9 @@ import swal from "sweetalert2";
 import statusMessage from "./status";
 export const Swal = swal;
 
+// @ts-expect-error
+window.swal = Swal;
+
 /** Text Info */
 export const StringInput = Swal.mixin({
 	icon: "question",
@@ -74,10 +77,10 @@ export const License = Swal.mixin({
 	confirmButtonText: "Agree",
 	denyButtonText: "Disagree",
 	preConfirm: (async () => {
-		await statusMessage();
+		statusMessage();
 	}),
 	preDeny: (async () => {
-		await NoLicense.fire();
+		NoLicense.fire();
 	})
 });
 
