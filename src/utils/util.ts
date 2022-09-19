@@ -1,9 +1,9 @@
-import hack from "../../declarations/delta";
+import deltaobject from "../../declarations/delta";
 
 
 
 /* @ts-ignore */ /** The hack variable. */
-export const delta : typeof hack = window.delta;
+export const delta : typeof deltaobject = window.delta;
 
 
 /** Over 9000000000 */
