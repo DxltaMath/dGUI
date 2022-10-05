@@ -1,10 +1,10 @@
 {
   "name": "@deltamath/dgui",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "DeltaMath Hacking GUI, for user convenience.",
   "main": "dist/bundle.js",
   "scripts": {
-    "prestart": "npx webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -22,15 +22,15 @@
     "glob": "^8.0.3",
     "postcss-loader": "^7.0.1",
     "raw-loader": "^4.0.2",
-    "sass": "^1.54.5",
+    "sass": "^1.55.0",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
-    "ts-loader": "^9.3.1",
+    "ts-loader": "^9.4.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "sweetalert2": "^11.4.29",
-    "typescript": "^4.8.2"
+    "sweetalert2": "^11.4.37",
+    "typescript": "^4.8.4"
   }
 }

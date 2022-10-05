@@ -50,6 +50,11 @@ export const addArea = (title: string) => {
         area.append(document.createElement("br"));
         area.append(document.createElement("br"));
     } else {
+		const warning = document.createElement("p");
+		warning.className = "red-text";
+		warning.innerText = "WARNING: WE DO NOT CONDONE USAGE OF USING HACKS FOR SCHOOL ASSIGNMENTS. THIS EXTENSION EXISTS PURLEY FOR FUN AND EXPERIMENTATION, NOT CHEATING YOUR MATH CLASS. PLEASE DO NOT USE THIS ON A SCHOOL ACCOUNT- IF YOU PASSED THE DELTAMATH BUT FAILED THE EXAM, THAT'S ON YOU.";
+		area.append(warning);
+
         firstCategory = false;
     }
 

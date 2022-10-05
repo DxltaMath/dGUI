@@ -1,4 +1,4 @@
-import { addArea } from "..";
+import { addArea } from "../index";
 
 export const category = {
 	math: addArea("Math Hacks"),

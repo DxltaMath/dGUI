@@ -1,6 +1,7 @@
 **/**/.DS_STORE
 
 package-lock.json
+pnpm-lock.yaml
 
 # Logs
 logs
