@@ -3,7 +3,7 @@ import deltaobject from "../../declarations/delta";
 
 
 /* @ts-ignore */ /** The hack variable. */
-export const delta : typeof deltaobject = window.delta;
+export const delta : typeof deltaobject = window._.delta;
 
 
 /** Over 9000000000 */
