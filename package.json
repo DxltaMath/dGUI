@@ -30,7 +30,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "sweetalert2": "^11.4.37",
+    "sweetalert2-neutral": "11.6.15-neutral",
     "typescript": "^4.8.4"
   }
 }

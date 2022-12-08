@@ -1,4 +1,4 @@
-import swal from "sweetalert2";
+import swal from "sweetalert2-neutral";
 import statusMessage from "./status";
 export const Swal = swal;
 
